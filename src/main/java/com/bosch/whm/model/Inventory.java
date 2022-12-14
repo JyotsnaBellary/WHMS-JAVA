@@ -5,10 +5,10 @@ import java.io.*;
 public class Inventory{
   
   int ProductCode;
-  String ProductName;
+  	String ProductName;
    String TransferType;
-String CurrentLocation;
-String ScannedLocation;
+   String CurrentLocation;
+   String ScannedLocation;
 
 
 // create setters and getters
