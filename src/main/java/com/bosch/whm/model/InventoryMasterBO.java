@@ -1,3 +1,5 @@
+//Code done by Sasireha and reviewed by Jyotsna
+
 package com.bosch.whm.model;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,11 +10,9 @@ public class InventoryMasterBO {
 	Set<Product> Products=new HashSet<Product>();
 	int inventoryCount=0;
 	public String addProduct(Product product)//epic 5
-
+	
 	//have to use ProductInBoundBO and implement it
-
-	{
-		
+	{		
 		if(Products.contains(product))
 		{
 			return "product exist";
@@ -24,41 +24,36 @@ public class InventoryMasterBO {
 		inventoryCount=inventoryCount+product.getCurrentStock();
 		return "product added";		
 		}
-	
 	}
+	
 	public int increaseInventoryCount()//epic 5
 	{	
 		inventoryCount=inventoryCount+1;
-		return inventoryCount;
+        return inventoryCount;
 	}
-
+	
+	//returns the total inventory counts of all the products
 	public int inventoryCountUpdate()//epic 5
 	{
 		for(Product product:Products)
 		{
 			inventoryCount+=product.getCurrentStock();
 		}
+		
 		return inventoryCount;
 	}
 	public int inventoryCountDamage()//epic 5
 	{
-
 		return 0;
-
 	}
 	public String validateData()//epic 5
-	{
-		
+	{		
 		return null;
-
 	}
 	public int decreaseInventoryCount()//epic 5{
-
 	{
 		inventoryCount=inventoryCount-1;
 		return inventoryCount;		
-
-	}
-
+	}		
 }
 

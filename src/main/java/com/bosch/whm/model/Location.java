@@ -7,10 +7,8 @@ public class Location {
     private Dimension dimension;
     private int statusCode; 
  
-
-    
-    
+  
 
 	}
 
-}
+

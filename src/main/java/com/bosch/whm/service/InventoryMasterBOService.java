@@ -1,33 +1,37 @@
+
 package com.bosch.whm.service;
 import com.bosch.whm.model.InventoryMasterBO;
 import com.bosch.whm.model.Product;
+
 //developed by sneha, reviewed by Jyotsna
 public class InventoryMasterBOService {
 	//implement all methods of InventoryMasterBO
 	InventoryMasterBO inventoryMasterBO;
 	public String addProductService(Product product)//epic 5
-
+	
 	//have to use ProductInBoundBO and implement it
-
 	{
 		if(product!=null)
-	{
-			return inventoryMasterBO.addProduct(product);
-			  
-	}
+		{
+			inventoryMasterBO.addProduct(product);
+			return "product added";
+		}
+
 		else
 		{
 			return "null product";
 		}
+
 	}
 	public int increaseInventoryCountService()//epic 5
 	{	
 		return inventoryMasterBO.increaseInventoryCount();
-		 
+		
 	}
 
 	public int inventoryCountUpdateService()//epic 5
 	{
+
 		return inventoryMasterBO.inventoryCountUpdate();
 		
 	}
@@ -55,3 +59,7 @@ public class InventoryMasterBOService {
 		
 	}
 }
+
+
+	
+	

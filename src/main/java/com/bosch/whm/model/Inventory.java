@@ -1,3 +1,5 @@
+//Code done by Sasireha and reviewed by Jyotsna
+
 package com.bosch.whm.model;
 
 import java.io.*;
@@ -9,7 +11,9 @@ public class Inventory{
 	String TransferType;
 	String CurrentLocation;
 	String ScannedLocation;
-	
+
+	// create setters and getters
+	// create required constructors
 	public int getProductCode() {
 		return ProductCode;
 	}
@@ -40,6 +44,7 @@ public class Inventory{
 	public void setScannedLocation(String scannedLocation) {
 		ScannedLocation = scannedLocation;
 	}
+	//constructor created for Inventory.java
 	public Inventory(int productCode, String productName, String transferType, String currentLocation,
 			String scannedLocation) {
 		super();
@@ -49,8 +54,6 @@ public class Inventory{
 		CurrentLocation = currentLocation;
 		ScannedLocation = scannedLocation;
 	}
-
-
-	// create setters and getters
-	// create required constructors
+	
+	
 }
