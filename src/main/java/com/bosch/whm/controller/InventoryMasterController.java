@@ -11,6 +11,7 @@ public class InventoryMasterController {
 			//call required service classes
 			InventoryMasterBOService inventoryMasterBOService = new InventoryMasterBOService();
 			 Scanner scanner=new Scanner(System.in);
+			 //Taking input from user
 	            System.out.println("Enter the product code");
 	            int productCode= scanner.nextInt();
 	            System.out.println("Enter the product name");
@@ -27,6 +28,7 @@ public class InventoryMasterController {
 	            System.out.println("Enter the product weight");
 	            double weight = scanner.nextDouble();
 
+	            //creating dimension instance
 	            Dimension dimension=new Dimension(length,width,height);
 	            Product product=new Product(productCode,name,currentStock,dimension,weight);;
 	            String addproduct=inventoryMasterBOService.addProductService(product);
