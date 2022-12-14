@@ -7,6 +7,9 @@ public class Dimension {
       private double height;
       
       //Created Parameterized constructor
+	
+      public Dimension(){}
+
 	public Dimension(double length, double width, double height) {
 		super();
 		this.length = length;
@@ -14,7 +17,7 @@ public class Dimension {
 		this.height = height;
 	}
 
-   
+    //Create Parameterized constructor
  
     //Create getter setter with toString
 

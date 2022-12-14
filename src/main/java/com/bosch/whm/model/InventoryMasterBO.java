@@ -1,5 +1,3 @@
-//Code done by Sasireha and reviewed by Jyotsna
-
 package com.bosch.whm.model;
 import java.util.HashSet;
 import java.util.Set;
@@ -56,4 +54,3 @@ public class InventoryMasterBO {
 		return inventoryCount;		
 	}		
 }
-

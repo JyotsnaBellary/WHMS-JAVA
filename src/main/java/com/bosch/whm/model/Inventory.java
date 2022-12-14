@@ -1,5 +1,3 @@
-//Code done by Sasireha and reviewed by Jyotsna
-
 package com.bosch.whm.model;
 
 import java.io.*;
@@ -54,6 +52,5 @@ public class Inventory{
 		CurrentLocation = currentLocation;
 		ScannedLocation = scannedLocation;
 	}
-	
 	
 }
