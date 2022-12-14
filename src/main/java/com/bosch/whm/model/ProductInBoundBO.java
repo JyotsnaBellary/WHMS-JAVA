@@ -5,18 +5,10 @@ import java.util.List;
 
 public class ProductInBoundBO {
 
-
-
 	List<Product> list=new ArrayList<Product>();
 	public String createProduct(Product product){
-<<<<<<< HEAD
+
 		return "product added";
-=======
-		return null;
-
-
->>>>>>> e4ee32a185d0f9a8a9343875a6d3c42962cda0a3
-
 	}
 
 	//logic related to get Product
