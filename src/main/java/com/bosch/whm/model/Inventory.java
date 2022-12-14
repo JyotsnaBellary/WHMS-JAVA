@@ -2,18 +2,45 @@
 
 package com.bosch.whm.model;
 
-import java.io.*;
-
 public class Inventory{
-  
   int ProductCode;
-  	String ProductName;
-   String TransferType;
-   String CurrentLocation;
-   String ScannedLocation;
-<<<<<<< HEAD
-
-=======
+  String ProductName;
+  String TransferType;
+  String CurrentLocation;
+  String ScannedLocation;
+  
+ public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Inventory other = (Inventory) obj;
+		if (CurrentLocation == null) {
+			if (other.CurrentLocation != null)
+				return false;
+		} else if (!CurrentLocation.equals(other.CurrentLocation))
+			return false;
+		if (ProductCode != other.ProductCode)
+			return false;
+		if (ProductName == null) {
+			if (other.ProductName != null)
+				return false;
+		} else if (!ProductName.equals(other.ProductName))
+			return false;
+		if (ScannedLocation == null) {
+			if (other.ScannedLocation != null)
+				return false;
+		} else if (!ScannedLocation.equals(other.ScannedLocation))
+			return false;
+		if (TransferType == null) {
+			if (other.TransferType != null)
+				return false;
+		} else if (!TransferType.equals(other.TransferType))
+			return false;
+		return true;
+	}
    
 	public int getProductCode() {
 		return ProductCode;
@@ -54,7 +81,7 @@ public class Inventory{
 		CurrentLocation = currentLocation;
 		ScannedLocation = scannedLocation;
 	}
->>>>>>> 7bea8a8d148512777ee71dd4d71c098b68487045
+
 
 // create setters and getters
 // create required constructors

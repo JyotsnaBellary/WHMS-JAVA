@@ -14,8 +14,8 @@ public class InventoryMasterBOService {
 	{
 		if(product!=null)
 		{
-			inventoryMasterBO.addProduct(product);
-			return "product added";
+			
+			return inventoryMasterBO.addProduct(product);
 		}
 		else
 		{

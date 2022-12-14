@@ -32,7 +32,18 @@ public class InventoryMasterController {
 	            Dimension dimension=new Dimension(length,width,height);
 	            Product product=new Product(productCode,name,currentStock,dimension,weight);;
 	            String addproduct=inventoryMasterBOService.addProductService(product);
-	            System.out.println(addproduct);
+	           if(addproduct.equals("product added"))
+	        		   {
+	        	   
+	        		   }
+	           else if(addproduct.equals("product exist"))
+	           {
+	        	   
+	           }
+	           else
+	           {
+	        	   System.out.println("add valid product");
+	           }
 
 	        }
 	 

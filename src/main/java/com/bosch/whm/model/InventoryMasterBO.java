@@ -9,21 +9,21 @@ public class InventoryMasterBO {
 
 	//new inbound product 
 	ProductInBoundBO productInBoundBO;
-	Set<Product> Products=new HashSet<Product>();
+	Set<Product> products=new HashSet<Product>();
     int inventoryCount=0;
     public String addProduct(Product product)//epic 5 
 
     //have to use ProductInBoundBO and implement it
 
-    {
+    {	
 
-        if(Products.contains(product))
+        if(!products.add(product))
         {
             return "product exist";
         }
         else {
-        Products.add(product);
-        inventoryCount=inventoryCount+1;
+        
+        
         return "product added";        
         }
 
