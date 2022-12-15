@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InventoryBO {
+	/*
+	 * keerthana validate the inventory data
+	 */
 	 List<Inventory> inventoryList = new ArrayList<Inventory>(); {
 	        inventoryList.add(new Inventory(1, "Sensor", "Standard", "BAN", "COB"));
 	        inventoryList.add(new Inventory(2, "Steering", "Direcct", "HYD", "COB"));
@@ -12,7 +15,9 @@ public class InventoryBO {
 	        inventoryList.add(new Inventory(5, "DishWasher", "Standard", "HYD", "COB"));
 	    }
 
-
+/*
+ * This method is to validate the inventory data
+ */
 	    public void validateData(Inventory inventory )//epic 4
 	    {   
 	        int count = 0;
@@ -33,7 +38,7 @@ public class InventoryBO {
 
 	{
 		return null;
-		//update your inventrycount
+		//update your inventory count
 
 	}
 
