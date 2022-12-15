@@ -5,13 +5,10 @@ import java.util.List;
 
 public class ProductInBoundBO {
 
-
-
 	List<Product> list=new ArrayList<Product>();
 	public String createProduct(Product product){
 
-
-
+		return "product added";
 	}
 
 	//logic related to get Product

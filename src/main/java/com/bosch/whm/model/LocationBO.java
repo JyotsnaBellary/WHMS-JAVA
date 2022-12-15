@@ -32,7 +32,8 @@ public class LocationBO {
 
 
 	public String updateLocation(Location location)//epic 3
-	{}//
+	{
+		return null;}//
 
 	public void deallocate() //epic4
 	{}

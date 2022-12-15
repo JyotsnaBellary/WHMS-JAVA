@@ -1,46 +1,17 @@
-//Code done by Sasireha and reviewed by Jyotsna
 
 package com.bosch.whm.model;
 
+import java.io.*;
+
 public class Inventory{
+
 	private int ProductCode;
 	private String ProductName;
 	private String TransferType;
 	private String CurrentLocation;
 	private String ScannedLocation;
 	
- public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Inventory other = (Inventory) obj;
-		if (CurrentLocation == null) {
-			if (other.CurrentLocation != null)
-				return false;
-		} else if (!CurrentLocation.equals(other.CurrentLocation))
-			return false;
-		if (ProductCode != other.ProductCode)
-			return false;
-		if (ProductName == null) {
-			if (other.ProductName != null)
-				return false;
-		} else if (!ProductName.equals(other.ProductName))
-			return false;
-		if (ScannedLocation == null) {
-			if (other.ScannedLocation != null)
-				return false;
-		} else if (!ScannedLocation.equals(other.ScannedLocation))
-			return false;
-		if (TransferType == null) {
-			if (other.TransferType != null)
-				return false;
-		} else if (!TransferType.equals(other.TransferType))
-			return false;
-		return true;
-	}
+	//constructor created for Inventory.java
 public Inventory(int productCode, String productName, String transferType, String currentLocation,
 		String scannedLocation) {
 	super();
@@ -50,7 +21,14 @@ public Inventory(int productCode, String productName, String transferType, Strin
 	CurrentLocation = currentLocation;
 	ScannedLocation = scannedLocation;
 }
-public int getProductCode() {
+
+	// create setters and getters
+	// create required constructors
+
+	//Code done by Sasireha and reviewed by Jyotsna
+
+	public int getProductCode() {
+
 		return ProductCode;
 	}
 	public void setProductCode(int productCode) {
@@ -80,8 +58,4 @@ public int getProductCode() {
 	public void setScannedLocation(String scannedLocation) {
 		ScannedLocation = scannedLocation;
 	}
-
-
-// create setters and getters
-// create required constructors
 }
