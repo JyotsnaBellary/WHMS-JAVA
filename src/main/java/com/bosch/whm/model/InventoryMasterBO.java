@@ -20,6 +20,11 @@ public class InventoryMasterBO {
 		Products.add(product1);
 		Products.add(product2);
 		Products.add(product3);
+		
+		for(Product product:Products)
+		{
+			inventoryCount += product.getCurrentStock();
+		}
 	}
 	public String addProduct(Product product)//epic 5
 
