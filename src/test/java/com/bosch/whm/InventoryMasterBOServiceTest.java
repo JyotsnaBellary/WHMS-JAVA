@@ -15,6 +15,7 @@ import com.bosch.whm.service.InventoryMasterBOService;
 
 public class InventoryMasterBOServiceTest { 
 
+    //creating service instance
     static InventoryMasterBOService inventoryMasterBOService;
     static Product product;
     @BeforeClass
@@ -39,6 +40,7 @@ public class InventoryMasterBOServiceTest {
     } 
     
     // Developed by Sasireha
+    //Testcase to check if product is successfully added.
     @Test
     public void testAddProductService() {
        // fail("Not yet implemented");
@@ -49,6 +51,7 @@ public class InventoryMasterBOServiceTest {
     } 
     
     // Developed by Sasireha
+    //returns total count of Inventory count after increasing
     @Test
     public void testIncreaseInventoryCountService() {
     	Dimension dimension=new Dimension(5.0,6.0,7.0);
@@ -57,6 +60,7 @@ public class InventoryMasterBOServiceTest {
     } 
 
     // code developed by sneha
+    //returns total count of inventory
     @Test
     public void testInventoryCountUpdateService() {
         assertEquals(60, inventoryMasterBOService.inventoryCountUpdateService());
@@ -69,6 +73,7 @@ public class InventoryMasterBOServiceTest {
     } 
 
     // Developed by Sasireha
+    //returns total count of inventory after decreasing
     @Test
     public void testDecreaseInventoryCountService() {
         assertEquals(59, inventoryMasterBOService.decreaseInventoryCountService());
