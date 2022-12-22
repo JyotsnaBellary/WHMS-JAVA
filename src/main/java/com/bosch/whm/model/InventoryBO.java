@@ -34,6 +34,21 @@ public class InventoryBO {
 	            System.out.println("Product not available in inventory");
 	        }
 	    }
+	   
+	    public String validateDataForTest(Inventory inventory) {
+	        int count = 0;
+	        // call the inventory validate data method
+	        for (Inventory item : inventoryList) {
+	            if (item.equals(inventory)) {
+	                count++;
+	            }
+	        }
+	        if (count >= 1) {
+	            return ("Product available in inventory");
+	        } else {
+	            return ("Product not available in inventory");
+	        }
+	    }
 	public String updateInventryCount()//epic 5
 
 	{
