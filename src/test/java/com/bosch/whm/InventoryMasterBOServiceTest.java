@@ -31,6 +31,8 @@ public class InventoryMasterBOServiceTest {
 
     @Before
     public void setUp() throws Exception {
+        Dimension dimension=new Dimension(5.0,6.0,7.0);
+		Product product=new Product(1,"mouse",10,dimension,5.0);
     }
 
     // Developed by Sasireha
@@ -43,9 +45,6 @@ public class InventoryMasterBOServiceTest {
     //Testcase to check if product is successfully added.
     @Test
     public void testAddProductService() {
-       // fail("Not yet implemented");
-    	Dimension dimension=new Dimension(5.0,6.0,7.0);
-		Product product=new Product(1,"mouse",10,dimension,5.0);
     	assertEquals("null product", inventoryMasterBOService.addProductService(null));
     	assertEquals("product added", inventoryMasterBOService.addProductService(product));
     } 
@@ -54,8 +53,6 @@ public class InventoryMasterBOServiceTest {
     //returns total count of Inventory count after increasing
     @Test
     public void testIncreaseInventoryCountService() {
-    	Dimension dimension=new Dimension(5.0,6.0,7.0);
-		Product product=new Product(1,"mouse",10,dimension,5.0);
         assertEquals(60, inventoryMasterBOService.increaseInventoryCountService());
     } 
 
