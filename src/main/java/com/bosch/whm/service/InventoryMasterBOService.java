@@ -1,15 +1,17 @@
-
-
-//Code done by Sasireha and reviewed by Jyotsna
-//developed by sneha, reviewed by Jyotsna
+//21/12/2022 - developed by sneha, reviewed by Jyotsna
 package com.bosch.whm.service;
 import com.bosch.whm.model.InventoryMasterBO;
 import com.bosch.whm.model.Product;
 
 public class InventoryMasterBOService {
 	//implement all methods of InventoryMasterBO
-	InventoryMasterBO inventoryMasterBO;
+	static InventoryMasterBO inventoryMasterBO;
 	//have to use ProductInBoundBO and implement it
+	public InventoryMasterBOService() {
+		// TODO Auto-generated constructor stub
+		inventoryMasterBO = new InventoryMasterBO();
+
+	}
 	public String addProductService(Product product)//epic 5
 	{
 		if(product!=null)
@@ -54,11 +56,4 @@ public class InventoryMasterBOService {
 		return null;
 
 	}
-	public InventoryMasterBOService() {
-		// TODO Auto-generated constructor stub
-		inventoryMasterBO=new InventoryMasterBO();
-
-	}
 }
-
-

@@ -30,7 +30,7 @@ public class InventoryMasterController {
 
 	            //creating dimension instance
 	            Dimension dimension=new Dimension(length,width,height);
-	            Product product=new Product(productCode,name,currentStock,dimension,weight);;
+	            Product product=new Product(productCode,name,currentStock,dimension,weight);
 	            String addproduct=inventoryMasterBOService.addProductService(product);
 	           if(addproduct.equals("product added"))
 	        		   {
@@ -44,7 +44,7 @@ public class InventoryMasterController {
 	           {
 	        	   System.out.println("add valid product");
 	           }
-
+	           System.out.println(inventoryMasterBOService.inventoryCountUpdateService());
 	        }
 	 
 
