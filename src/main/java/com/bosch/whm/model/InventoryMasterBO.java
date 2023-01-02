@@ -9,7 +9,21 @@ public class InventoryMasterBO {
 	//new inbounds product 
 	ProductInBoundBO productInBoundBO;
 	Set<Product> Products=new HashSet<Product>();
-	int inventoryCount=0;
+	static int inventoryCount=0;
+	
+	public InventoryMasterBO() {
+		// TODO Auto-generated constructor stub
+		Dimension dimension=new Dimension(5.0,6.0,7.0);
+	    Product product1=new Product(1,"mouse",10,dimension,5.0);
+	    Product product2=new Product(2,"monitor",20,dimension,4.0);
+	    Product product3=new Product(3,"printer",30,dimension,2.0);
+	   Products.add(product1);
+	   Products.add(product2);
+	   Products.add(product3);
+	   for(Product product: Products) {
+		   inventoryCount += product.getCurrentStock();
+	   }
+	}
 	public String addProduct(Product product)//epic 5
 
 	//have to use ProductInBoundBO and implement it
@@ -31,17 +45,19 @@ public class InventoryMasterBO {
 	{	
 		inventoryCount=inventoryCount+1;
 		return inventoryCount;
+	
 	}
 
 	//returns the total inventory counts of all the products
 	public int inventoryCountUpdate()//epic 5
 	{
+		int Count = 0;
 		for(Product product:Products)
 		{
-			inventoryCount+=product.getCurrentStock();
+			Count+=product.getCurrentStock();
 		}
-
-		return inventoryCount;
+		return Count;
+//		return 5;
 
 	}
 	public int inventoryCountDamage()//epic 5
@@ -56,8 +72,7 @@ public class InventoryMasterBO {
 	}
 	public int decreaseInventoryCount()//epic 5{
 	{
-
-		inventoryCount=inventoryCount-1;
+		inventoryCount = inventoryCount-1;
 		return inventoryCount;		
 	}		
 }
