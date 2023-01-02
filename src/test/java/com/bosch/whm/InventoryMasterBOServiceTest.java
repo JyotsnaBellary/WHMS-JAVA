@@ -1,4 +1,4 @@
-// 21/12/2022 , file created by Sneha,reviewed by Jyotsna
+// 21/12/2022 , file created by Sneha.s,reviewed by Jyotsna
 package com.bosch.whm;
 import java.lang.Object;
 import static org.junit.Assert.*; 
@@ -15,6 +15,7 @@ import com.bosch.whm.service.InventoryMasterBOService;
 
 public class InventoryMasterBOServiceTest { 
 
+    //creating service instance
     static InventoryMasterBOService inventoryMasterBOService;
     static Product product;
     @BeforeClass
@@ -30,6 +31,8 @@ public class InventoryMasterBOServiceTest {
 
     @Before
     public void setUp() throws Exception {
+        Dimension dimension=new Dimension(5.0,6.0,7.0);
+		Product product=new Product(1,"mouse",10,dimension,5.0);
     }
 
     // Developed by Sasireha
@@ -39,24 +42,22 @@ public class InventoryMasterBOServiceTest {
     } 
     
     // Developed by Sasireha
+    //Testcase to check if product is successfully added.
     @Test
     public void testAddProductService() {
-       // fail("Not yet implemented");
-    	Dimension dimension=new Dimension(5.0,6.0,7.0);
-		Product product=new Product(1,"mouse",10,dimension,5.0);
     	assertEquals("null product", inventoryMasterBOService.addProductService(null));
     	assertEquals("product added", inventoryMasterBOService.addProductService(product));
     } 
     
     // Developed by Sasireha
+    //returns total count of Inventory count after increasing
     @Test
     public void testIncreaseInventoryCountService() {
-    	Dimension dimension=new Dimension(5.0,6.0,7.0);
-		Product product=new Product(1,"mouse",10,dimension,5.0);
         assertEquals(60, inventoryMasterBOService.increaseInventoryCountService());
     } 
 
     // code developed by sneha
+    //returns total count of inventory
     @Test
     public void testInventoryCountUpdateService() {
         assertEquals(60, inventoryMasterBOService.inventoryCountUpdateService());
@@ -69,14 +70,15 @@ public class InventoryMasterBOServiceTest {
     } 
 
     // Developed by Sasireha
+    //returns total count of inventory after decreasing
     @Test
     public void testDecreaseInventoryCountService() {
         assertEquals(59, inventoryMasterBOService.decreaseInventoryCountService());
     } 
 
-//    @Test
-//    public void testValidateDataService() {
-//        fail("Not yet implemented");
-//    } 
+    @Test
+    public void testValidateDataService() {
+        fail("Not yet implemented");
+    } 
 
 }
