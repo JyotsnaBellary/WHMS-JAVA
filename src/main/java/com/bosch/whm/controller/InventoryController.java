@@ -1,10 +1,7 @@
 package com.bosch.whm.controller;
-
 import java.util.Scanner;
-
 import com.bosch.whm.model.Inventory;
 import com.bosch.whm.service.InventoryBOService;
-
 public class InventoryController {
 
 	public static void main(String[] args) {

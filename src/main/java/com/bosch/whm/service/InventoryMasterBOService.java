@@ -1,4 +1,8 @@
-//21/12/2022 - developed by sneha, reviewed by Jyotsna
+
+/* Code developed by Sneha.S, Reviewed by Jyotsna
+ *  Date: 21/12/2022 
+ *  version 1.1
+ */
 package com.bosch.whm.service;
 import com.bosch.whm.model.InventoryMasterBO;
 import com.bosch.whm.model.Product;
