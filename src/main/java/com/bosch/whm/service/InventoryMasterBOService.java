@@ -1,8 +1,5 @@
-
-/* Code developed by Sneha.S, Reviewed by Jyotsna
- *  Date: 21/12/2022 
- *  version 1.1
- */
+//Code done by Sasireha and reviewed by Jyotsna
+//developed by sneha, reviewed by Jyotsna
 package com.bosch.whm.service;
 import com.bosch.whm.model.InventoryMasterBO;
 import com.bosch.whm.model.Product;
@@ -60,4 +57,5 @@ public class InventoryMasterBOService {
 		return null;
 
 	}
+	
 }

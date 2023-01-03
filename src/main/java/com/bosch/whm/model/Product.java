@@ -4,12 +4,12 @@ public class Product {
 	private int productCode;
 	private String name;	
 	private int currentStock;
-	private double dimension;
+	private Dimension dimension;
 	private double weight;
 	public Product(){}
 	
 	//Created Parameterized constructor
-	public Product(int productCode, String name, int currentStock, double dimension, double weight) {
+	public Product(int productCode, String name, int currentStock, Dimension dimension, double weight) {
 		super();
 		this.productCode = productCode;
 		this.name = name;
@@ -17,10 +17,7 @@ public class Product {
 		this.dimension = dimension;
 		this.weight = weight;
 	}
-	public Product(int i, String string, int j, Dimension dimension2, double d) {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	//Created getter setter with toString
 	public int getCurrentStock() {
 		return currentStock;
@@ -46,11 +43,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public double getDimension() {
+	public Dimension getDimension() {
 		return dimension;
 	}
 
-	public void setDimension(double dimension) {
+	public void setDimension(Dimension dimension) {
 		this.dimension = dimension;
 	}
 
