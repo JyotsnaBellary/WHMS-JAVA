@@ -1,3 +1,4 @@
+//created and developed by Jyotsna, 1/3/2023
 package com.bosch.whm;
 
 import static org.junit.Assert.*;
@@ -11,7 +12,6 @@ import org.junit.Test;
 import com.bosch.whm.dao.InventoryMasterDAOImpl;
 import com.bosch.whm.model.Dimension;
 import com.bosch.whm.model.Product;
-import com.bosch.whm.service.InventoryMasterBOService;
 
 public class InventoryMasterDAOImplTest {
 
