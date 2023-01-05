@@ -20,7 +20,7 @@ public class InventoryController {
 		Inventory item = new Inventory(productCode, productName, transferType, currentLocation, scannedLocation);
 
 		InventoryBOService inventoryBOService = new InventoryBOService();
-		inventoryBOService.validateDataService(item);
+//		inventoryBOService.validateDataService(item);
 	}
 
 }
