@@ -1,6 +1,7 @@
 /* Code developed by Sneha.S, edited and Reviewed by Jyotsna
  *  Date: 30/12/2022 
  *  version 1.1
+ *  version 1.1 updated to 1.2
  */
 package com.bosch.whm.dao;
 import java.sql.Connection;
