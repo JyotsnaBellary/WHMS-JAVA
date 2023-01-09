@@ -15,13 +15,14 @@ public class InventoryMasterController {
 		public static void main(String[] args) {
 			//call required service classes
 			try {
-				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+//				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.12.195:1521:xe","system","oracle");
 				System.out.println(con);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			InventoryMasterBOService inventoryMasterBOService = new InventoryMasterBOService();
+//			InventoryMasterBOService inventoryMasterBOService = new InventoryMasterBOService();
 			InventoryMasterDAOImpl inventoryMasterDAOImpl = new InventoryMasterDAOImpl();
 			 Scanner scanner=new Scanner(System.in);
 			 //Taking input from user

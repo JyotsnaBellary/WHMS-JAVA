@@ -22,10 +22,31 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	public InventoryMasterDAOImpl() {
 		// TODO Auto-generated constructor stub
 		Dimension dimension=new Dimension(5.0,6.0,7.0);
-	    Product product1=new Product(1,"mouse",10,dimension,5.0);
-	    Product product2=new Product(2,"monitor",20,dimension,4.0);
-	    Product product3=new Product(3,"printer",30,dimension,2.0);
-//	   addProduct(product3);
+	    Product product1=new Product(50,"laptop",10,dimension,5.0);
+	    Product product2=new Product(1,"monitor",20,dimension,4.0);
+	    Product product3=new Product(13,"printer",30,dimension,2.0);
+	   addProduct(product3);
+	    
+	    try
+		{
+			String Query="select * from product";
+			pmt=connection.prepareStatement(Query);
+			ResultSet resultSet = pmt.executeQuery();
+			 ArrayList<Product> productList = new ArrayList<Product>();
+
+	         while(resultSet.next()) {
+	        	 Dimension dimension1 = new Dimension(resultSet.getDouble(4),resultSet.getDouble(5),resultSet.getDouble(6));
+	            Product product = new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), dimension,resultSet.getDouble(5));
+	            productList.add(product);
+	         }
+	         for(Product product: productList) {
+	        	 System.out.println(product.getProductCode()+" " + product.getName()+" " + product.getWeight());
+	         }
+		}
+		catch(SQLException exe)
+		{
+			exe.printStackTrace();
+		}	
 	}
 	
 	
