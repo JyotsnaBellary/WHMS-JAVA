@@ -27,6 +27,7 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	    Product product2=new Product(2,"monitor",20,dimension,4.0);
 	    Product product3=new Product(3,"printer",30,dimension,2.0);
 //	   addProduct(product3);
+	    
 	}
 	
 	

@@ -15,8 +15,7 @@ public class InventoryMasterController {
 		public static void main(String[] args) {
 			//call required service classes
 			try {
-				//Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
-				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.12.184:1521:xe","system","oracle");
+				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
 				System.out.println(con);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -42,8 +41,8 @@ public class InventoryMasterController {
 	            System.out.println("Enter the product weight");
 	            double weight = scanner.nextDouble();
 
-//	            //creating dimension instance
-	            Dimension dimension=new Dimension(length,width,height);
+	            //creating dimension instance
+			 	Dimension dimension=new Dimension(length,width,height);
 	            Product product=new Product(productCode,name,currentStock,dimension,weight);
 //	            String addproduct=inventoryMasterBOService.addProductService(product);
 	            String addproduct=inventoryMasterDAOImpl.addProduct(product);

@@ -10,8 +10,8 @@ public class ConnectionUtil {
 		Connection con=null;
 		try
 		{
-			//con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
-			 con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.12.184:1521:xe","system","oracle");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+			
 		}
 		catch(SQLException e)
 		{
