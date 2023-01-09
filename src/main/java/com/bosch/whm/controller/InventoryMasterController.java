@@ -15,7 +15,8 @@ public class InventoryMasterController {
 		public static void main(String[] args) {
 			//call required service classes
 			try {
-				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+				//Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.12.184:1521:xe","system","oracle");
 				System.out.println(con);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
