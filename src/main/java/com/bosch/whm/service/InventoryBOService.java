@@ -11,7 +11,7 @@ public class InventoryBOService {
 		inventoryBO = new InventoryBO();
 	}
 
-	public void validateDataService(Inventory inventory)// epic 4
+	public void validateDataService(Inventory inventory) throws Exception// epic 4
 	{
 		if (inventory == null) {
 			System.out.println("invalid inventorydata");
