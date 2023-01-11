@@ -33,7 +33,6 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	    for(Product product: productList) {
        	 System.out.println(product.getProductCode()+" " + product.getName()+" " + product.getCurrentStock());
         }
-	    
 	}
 	
 	

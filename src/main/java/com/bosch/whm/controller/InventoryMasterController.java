@@ -42,8 +42,8 @@ public class InventoryMasterController {
 	            System.out.println("Enter the product weight");
 	            double weight = scanner.nextDouble();
 
-//	            //creating dimension instance
-	            Dimension dimension=new Dimension(length,width,height);
+	            //creating dimension instance
+			 	Dimension dimension=new Dimension(length,width,height);
 	            Product product=new Product(productCode,name,currentStock,dimension,weight);
 	            String addproduct=inventoryMasterBOService.addProductService(product);
 //	            String addproduct=inventoryMasterDAOImpl.addProduct(product);
