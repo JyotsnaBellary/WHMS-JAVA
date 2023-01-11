@@ -22,8 +22,8 @@ public class InventoryMasterController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//			InventoryMasterBOService inventoryMasterBOService = new InventoryMasterBOService();
-			InventoryMasterDAOImpl inventoryMasterDAOImpl = new InventoryMasterDAOImpl();
+			InventoryMasterBOService inventoryMasterBOService = new InventoryMasterBOService();
+//			InventoryMasterDAOImpl inventoryMasterDAOImpl = new InventoryMasterDAOImpl();
 			 Scanner scanner=new Scanner(System.in);
 			 //Taking input from user
 	            System.out.println("Enter the product code");
@@ -45,23 +45,11 @@ public class InventoryMasterController {
 //	            //creating dimension instance
 	            Dimension dimension=new Dimension(length,width,height);
 	            Product product=new Product(productCode,name,currentStock,dimension,weight);
-//	            String addproduct=inventoryMasterBOService.addProductService(product);
-	            String addproduct=inventoryMasterDAOImpl.addProduct(product);
-	            
-//	           if(addproduct.equals("product added"))
-//	        		   {
-//	        	   
-//	        		   }
-//	           else if(addproduct.equals("product exist"))
-//	           {
-//	        	   
-//	           }
-//	           else
-//	           {
-//	        	   System.out.println("add valid product");
-//	           }
-	           System.out.println(inventoryMasterDAOImpl.inventoryCountUpdate());
-	           System.out.println(addproduct);
+	            String addproduct=inventoryMasterBOService.addProductService(product);
+//	            String addproduct=inventoryMasterDAOImpl.addProduct(product);
+	           
+	           System.out.println(inventoryMasterBOService.inventoryCountUpdateService());
+//	           System.out.println(addproduct);
 	        }
 	 
 

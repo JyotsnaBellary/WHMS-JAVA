@@ -4,6 +4,8 @@
  */
 package com.bosch.whm.dao;
 
+import java.util.ArrayList;
+
 import com.bosch.whm.model.Product;
 
 public interface InventoryMasterDAO {
@@ -14,4 +16,5 @@ public interface InventoryMasterDAO {
 	public int inventoryCountDamage();
 	public String validateData();
 	public int decreaseInventoryCount();
+	public ArrayList<Product> getProduct();
 }

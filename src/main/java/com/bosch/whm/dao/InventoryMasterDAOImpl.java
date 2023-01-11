@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,28 +27,13 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	    Product product1=new Product(50,"laptop",10,dimension,5.0);
 	    Product product2=new Product(1,"monitor",20,dimension,4.0);
 	    Product product3=new Product(13,"printer",30,dimension,2.0);
-	   addProduct(product3);
+//	   addProduct(product3);
+	    ArrayList<Product> productList = getProduct();
+	    System.out.println("Product code      Product Name    Stock");
+	    for(Product product: productList) {
+       	 System.out.println(product.getProductCode()+" " + product.getName()+" " + product.getCurrentStock());
+        }
 	    
-	    try
-		{
-			String Query="select * from product";
-			pmt=connection.prepareStatement(Query);
-			ResultSet resultSet = pmt.executeQuery();
-			 ArrayList<Product> productList = new ArrayList<Product>();
-
-	         while(resultSet.next()) {
-	        	 Dimension dimension1 = new Dimension(resultSet.getDouble(4),resultSet.getDouble(5),resultSet.getDouble(6));
-	            Product product = new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), dimension,resultSet.getDouble(5));
-	            productList.add(product);
-	         }
-	         for(Product product: productList) {
-	        	 System.out.println(product.getProductCode()+" " + product.getName()+" " + product.getWeight());
-	         }
-		}
-		catch(SQLException exe)
-		{
-			exe.printStackTrace();
-		}	
 	}
 	
 	
@@ -74,7 +60,10 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 				return "product exist";
 			}
 		}
-			
+		catch(SQLIntegrityConstraintViolationException e)
+	    {
+	    	return("Product exists");
+	    }
 		catch(SQLException exe)
 		{
 			exe.printStackTrace();
@@ -94,7 +83,7 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		
 		try
 		{
-			String Query="select * from product where product_code="+pid;
+			String Query="select * from product where PRODUCTCODE="+pid;
 			pmt=connection.prepareStatement(Query);
 			ResultSet resultSet = pmt.executeQuery();
 			 //ArrayList<Product> productList = new ArrayList<Product>();
@@ -105,7 +94,7 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	            product.setCurrentStock(product.getCurrentStock()+1);   	         
 	         
 			
-		        String Query1="update product set currentStock=? where product_code=?";
+		        String Query1="update product set currentStock=? where productcode=?";
 				pmt=connection.prepareStatement(Query1);
 				pmt.setInt(1,product.getCurrentStock());
 				pmt.setInt(2,product.getProductCode());
@@ -198,7 +187,7 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		
 		try
 		{
-			String Query="select * from product where product_code="+pid;
+			String Query="select * from product where productcode="+pid;
 			pmt=connection.prepareStatement(Query);
 			ResultSet resultSet = pmt.executeQuery();
 
@@ -207,7 +196,7 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		         Product product = new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), dimension,resultSet.getDouble(5));
 		         product.setCurrentStock(product.getCurrentStock()-1);   	         
 	         			
-		        String Query1="update product set currentStock=? where product_code=? ";
+		        String Query1="update product set currentStock=? where productcode=? ";
 				pmt=connection.prepareStatement(Query1);
 				pmt.setInt(1,product.getCurrentStock());
 				pmt.setInt(2,product.getProductCode());
@@ -228,6 +217,29 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		}
 		
 		return 0;
+	}
+	
+	public ArrayList<Product> getProduct(){
+		try
+		{
+			String Query="select * from product";
+			pmt=connection.prepareStatement(Query);
+			ResultSet resultSet = pmt.executeQuery();
+			 ArrayList<Product> productList = new ArrayList<Product>();
+
+	         while(resultSet.next()) {
+	        	 Dimension dimension = new Dimension(resultSet.getDouble(4),resultSet.getDouble(5),resultSet.getDouble(6));
+	            Product product = new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), dimension,resultSet.getDouble(5));
+	            productList.add(product);
+	         }
+	         
+	         return productList;
+		}	
+	    catch(SQLException exe)
+		{
+			return null;
+		}
+		
 	}
 
 }
