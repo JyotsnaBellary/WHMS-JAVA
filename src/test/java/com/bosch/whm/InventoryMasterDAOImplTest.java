@@ -44,7 +44,7 @@ public class InventoryMasterDAOImplTest {
 	@Test
 	public void testAddProduct() {
 		Dimension dimension=new Dimension(5.0,6.0,7.0);
-		Product product=new Product(5,"waterbottle",10,dimension,5.0);
+		Product product=new Product(580,"waterbottle",10,dimension,5.0);
 //	 	assertEquals("null product", inventoryMasterDAOImpl.addProduct(null));
 	 	assertEquals("product added", inventoryMasterDAOImpl.addProduct(product));
 	}

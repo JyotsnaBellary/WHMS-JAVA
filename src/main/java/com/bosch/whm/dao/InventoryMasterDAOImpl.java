@@ -23,15 +23,15 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	PreparedStatement pmt=null;
 	public InventoryMasterDAOImpl() {
 		// TODO Auto-generated constructor stub
-		Dimension dimension=new Dimension(5.0,6.0,7.0);
-	    Product product1=new Product(50,"laptop",10,dimension,5.0);
-	    Product product2=new Product(1,"monitor",20,dimension,4.0);
-	    Product product3=new Product(13,"printer",30,dimension,2.0);
+		Dimension dimension=new Dimension(8.0,8.0,15.0);
+//	    Product product1=new Product(50,"laptop",10,dimension,5.0);
+//	    Product product2=new Product(1,"monitor",20,dimension,4.0);
+//	    Product product3=new Product(5,"Chargers",50,dimension,10.0);
 //	   addProduct(product3);
 	    ArrayList<Product> productList = getProduct();
-	    System.out.println("Product code      Product Name    Stock");
+	   
 	    for(Product product: productList) {
-       	 System.out.println(product.getProductCode()+" " + product.getName()+" " + product.getCurrentStock());
+       	 System.out.println("Product Code: " + product.getProductCode() + ", PRoduct Name: " + product.getName() + ", Product Stock: " + product.getCurrentStock() + ", Product Dimension: " + product.getDimension().getHeight() + ", " + product.getDimension().getLength() + ", " + product.getDimension().getWidth() + ", product Weight: " + product.getWeight());
         }
 	}
 	
@@ -77,8 +77,8 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		System.out.println("Enter product Id to update count: ");
 		
 //		for the purpose of unit testing
-//		int pid = scanner.nextInt();
-		int pid = 1;
+		int pid = scanner.nextInt();
+//		int pid = 1;
 		
 		try
 		{
@@ -90,8 +90,9 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	         if(resultSet.next()) {
 	        	 Dimension dimension = new Dimension(resultSet.getDouble(4),resultSet.getDouble(5),resultSet.getDouble(6));
 	            Product product = new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), dimension,resultSet.getDouble(5));
-	            product.setCurrentStock(product.getCurrentStock()+1);   	         
-	         
+	            System.out.println("Beore Increasing: " + product.getCurrentStock());
+	            product.setCurrentStock(product.getCurrentStock()+1);  
+	            System.out.println("After increasing"+product.getCurrentStock());
 			
 		        String Query1="update product set currentStock=? where productcode=?";
 				pmt=connection.prepareStatement(Query1);
@@ -110,7 +111,8 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		}
 		catch(SQLException exe)
 		{
-			exe.printStackTrace();
+//			exe.printStackTrace();
+			System.out.println("Invalid product Code");
 		}	
 		
 		return 0;
@@ -181,8 +183,8 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 		
 		System.out.println("Enter product Id to update count: ");
 		// for the purpose of unit testing. assuming product_ code as 1
-		//int pid = scanner.nextInt();
-		int pid = 1;
+		int pid = scanner.nextInt();
+//		int pid = 1;
 		
 		try
 		{
@@ -193,8 +195,9 @@ public class InventoryMasterDAOImpl implements InventoryMasterDAO {
 	         if(resultSet.next()) {
 	        	 Dimension dimension = new Dimension(resultSet.getDouble(4),resultSet.getDouble(5),resultSet.getDouble(6));
 		         Product product = new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), dimension,resultSet.getDouble(5));
+		         System.out.println("Before decreasing, stock: " + product.getCurrentStock());
 		         product.setCurrentStock(product.getCurrentStock()-1);   	         
-	         			
+		         System.out.println("After decreasing, stock: " + product.getCurrentStock());	
 		        String Query1="update product set currentStock=? where productcode=? ";
 				pmt=connection.prepareStatement(Query1);
 				pmt.setInt(1,product.getCurrentStock());

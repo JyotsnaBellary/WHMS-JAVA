@@ -10,7 +10,7 @@ public class ConnectionUtil {
 		Connection con=null;
 		try
 		{
-//			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+//			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:xe","system","oracle");
 			con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.12.195:1521:xe","system","oracle");
 			
 		}

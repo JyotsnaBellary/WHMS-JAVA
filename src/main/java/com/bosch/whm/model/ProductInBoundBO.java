@@ -18,8 +18,6 @@ public class ProductInBoundBO {
 	{
 		return null;
 
-
-
 	}
 	public String updateStock(Product product) //epic 2
 	{
